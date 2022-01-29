@@ -1,0 +1,67 @@
+<div *ngIf="article$ | async; let article">
+  <div class="photo">
+    <img [src]="article.imageUrl" alt="" />
+  </div>
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-title class="title">{{ article.title }}</mat-card-title>
+      <mat-card-content class="content">
+        <p>{{ article.summary }}</p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ut modi
+          ullam dolorum consequuntur, nulla a, adipisci quasi nemo eligendi
+          nobis accusamus deleniti ipsa optio dolores hic. Tempore, ullam nulla.
+          Laboriosam, nisi incidunt et, vero a iste velit fugit aperiam tenetur
+          deleniti corporis, dicta autem sequi voluptatem explicabo perferendis
+          distinctio repellendus labore ab nulla? Alias voluptatem quos quam
+          voluptatibus quidem odit exercitationem illo omnis eum, quod mollitia
+          corrupti labore molestias error numquam a ducimus eligendi blanditiis
+          doloremque ipsa repellendus nesciunt? Optio libero facere architecto
+          aperiam cupiditate a commodi, dolor magnam distinctio quae! Obcaecati
+          soluta, omnis consectetur voluptas hic quae odit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ut modi
+          ullam dolorum consequuntur, nulla a, adipisci quasi nemo eligendi
+          nobis accusamus deleniti ipsa optio dolores hic. Tempore, ullam nulla.
+          Laboriosam, nisi incidunt et, vero a iste velit fugit aperiam tenetur
+          deleniti corporis, dicta autem sequi voluptatem explicabo perferendis
+          distinctio repellendus labore ab nulla? Alias voluptatem quos quam
+          voluptatibus quidem odit exercitationem illo omnis eum, quod mollitia
+          corrupti labore molestias error numquam a ducimus eligendi blanditiis
+          doloremque ipsa repellendus nesciunt? Optio libero facere architecto
+          aperiam cupiditate a commodi, dolor magnam distinctio quae! Obcaecati
+          soluta, omnis consectetur voluptas hic quae odit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut ad
+          perferendis laborum minus quo ex veniam asperiores ipsa aperiam culpa?
+          Rerum saepe, doloremque, cum exercitationem, quod tempore distinctio
+          molestiae dolore unde dignissimos tempora eligendi? Amet dicta
+          consequatur id officiis atque exercitationem, blanditiis reprehenderit
+          placeat accusamus veniam, voluptatem, repellendus ab quos. Commodi
+          tenetur nisi saepe enim sint debitis veritatis nulla quo facere maxime
+          aut voluptatem dolorum ab, consectetur neque ducimus reprehenderit
+          voluptatum animi atque quisquam ex. Et non dignissimos velit
+          aspernatur omnis ab recusandae veritatis perspiciatis neque? Atque
+          eius beatae mollitia aperiam eligendi repellat nisi error earum,
+          dolorem et unde qui? Itaque modi saepe aut error nam corrupti, vero
+          laboriosam sint. Dolores deserunt, ea facere laboriosam corporis quo
+          dignissimos dolore voluptatibus, ipsum voluptas vero, sequi autem
+          voluptates expedita? Nam quam et voluptate iste beatae illum
+          exercitationem, iusto dignissimos libero, eius veniam!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim iusto
+          aperiam mollitia voluptatibus culpa. Ea corrupti repellendus numquam
+          labore ducimus quaerat? Nobis deserunt ut culpa repudiandae,
+          praesentium ipsam sint, in error ratione rerum blanditiis facere ad
+          veniam voluptate eveniet nesciunt, enim distinctio hic nam eos. Amet
+          voluptas excepturi nam numquam!
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <a class="home" [routerLink]="['home']"><mat-icon class="arrow">west</mat-icon>Back to homepage</a>
+</div>

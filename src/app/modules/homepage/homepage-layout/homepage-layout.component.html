@@ -1,0 +1,10 @@
+<div class="container">
+  <app-search></app-search>
+  <hr>
+  <div class="cards">
+    <app-article-card
+      *ngFor="let article of articles$ | async"
+      [article]="article"
+    ></app-article-card>
+  </div>
+</div>

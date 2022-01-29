@@ -1,0 +1,14 @@
+<mat-card class="card">
+  <img mat-card-image [src]="article.imageUrl" alt="photo" />
+  <mat-card-title-group class="title-group">
+    <mat-card-subtitle class="date">
+      <mat-icon class="calendar-icon">calendar_month</mat-icon>
+      {{ article.publishedAt | date }}</mat-card-subtitle
+    >
+    <mat-card-title class="title">{{ article.title }}</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content class="content">
+    {{ article.summary.slice(0, 100) + "..." }}
+  </mat-card-content>
+  <a [routerLink]="['/article', article.id]"  >Read more <mat-icon class="arrow-icon">east</mat-icon></a>
+</mat-card>

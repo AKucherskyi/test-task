@@ -1,0 +1,65 @@
+:host {
+  color: #363636;
+}
+
+a {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: none;
+  color: #363636;
+}
+
+img {
+  height: 220px;
+  margin-bottom: 25px;
+  object-fit: cover;
+}
+
+.arrow-icon {
+ color: #130F26;
+ font-size: 16px;
+ position: relative;
+ top: 2px;
+}
+
+.card {
+  height: 530px;
+}
+
+.calendar-icon {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+
+.content {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  height: 70px;
+}
+
+.date {
+  margin-bottom: 25px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  opacity: 0.6;
+}
+
+.title {
+  height: 80px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 20px;
+}
+
+.title-group,
+.content,
+a {
+  padding: 9px;
+}

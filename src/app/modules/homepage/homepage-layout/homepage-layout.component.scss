@@ -1,0 +1,41 @@
+:host {
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.container {
+    width: 1290px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 45px;
+    margin-top: 45px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 750px;
+    }
+}
+
