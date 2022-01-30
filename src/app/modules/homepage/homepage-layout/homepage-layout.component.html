@@ -1,5 +1,6 @@
 <div class="container">
   <app-search></app-search>
+  <h2 *ngIf="quantity$ | async; let quantity">Results: {{quantity}}</h2>
   <hr>
   <div class="cards">
     <app-article-card

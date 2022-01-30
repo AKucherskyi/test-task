@@ -5,6 +5,7 @@ import { HomepageLayoutComponent } from './homepage-layout/homepage-layout.compo
 import { SearchComponent } from './components/search/search.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
     ArticleCardComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class HomepageModule { }

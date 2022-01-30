@@ -1,6 +1,6 @@
 import { ArticleService } from './../../../core/services/article.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Article } from 'src/app/core/interfaces';
 
 @Component({
@@ -10,11 +10,13 @@ import { Article } from 'src/app/core/interfaces';
 })
 export class HomepageLayoutComponent implements OnInit {
   articles$!: Observable<Article[]>
+  quantity$!: Subject<number>
 
   constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
-    this.articles$ = this.articleService.getArticles(18)
+    this.articles$ = this.articleService.articles$
+    this.quantity$ = this.articleService.quantity$
   }
 
 }
