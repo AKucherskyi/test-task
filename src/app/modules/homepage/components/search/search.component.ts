@@ -17,12 +17,18 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      search: [''],
+      search: [this.articleService.predicate$.value],
     });
   }
 
   search() {
-    if (!this.form.value.search) return;
+    if (!this.form.value.search) {
+      this.articleService.updateArticlesDefault().subscribe(() => {
+        this.articleService.quantity$.next(0)
+        this.articleService.predicate$.next('')
+      })
+      return
+    }
     this.articleService.updateArticlesBySearch(this.form.value.search);
   }
 }
