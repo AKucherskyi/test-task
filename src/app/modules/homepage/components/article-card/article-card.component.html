@@ -5,10 +5,9 @@
       <mat-icon class="calendar-icon">calendar_month</mat-icon>
       {{ article.publishedAt | date }}</mat-card-subtitle
     >
-    <mat-card-title class="title">{{ article.title }}</mat-card-title>
+    <mat-card-title class="title" [innerHtml]="article.title | highlight: predicate"></mat-card-title>
   </mat-card-title-group>
-  <mat-card-content class="content">
-    {{ article.summary.slice(0, 100) + "..." }}
+  <mat-card-content class="content" [innerHtml]="article.summary.slice(0, 100) + '...' | highlight: predicate">
   </mat-card-content>
   <a [routerLink]="['/article', article.id]"  >Read more <mat-icon class="arrow-icon">east</mat-icon></a>
 </mat-card>

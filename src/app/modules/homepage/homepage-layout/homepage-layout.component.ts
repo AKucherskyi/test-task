@@ -6,17 +6,16 @@ import { Article } from 'src/app/core/interfaces';
 @Component({
   selector: 'app-homepage-layout',
   templateUrl: './homepage-layout.component.html',
-  styleUrls: ['./homepage-layout.component.scss']
+  styleUrls: ['./homepage-layout.component.scss'],
 })
 export class HomepageLayoutComponent implements OnInit {
-  articles$!: Observable<Article[]>
-  quantity$!: Subject<number>
+  articles$!: Observable<Article[]>;
+  quantity$!: Subject<number>;
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService) {}
 
   ngOnInit(): void {
-    this.articles$ = this.articleService.articles$
-    this.quantity$ = this.articleService.quantity$
+    this.articles$ = this.articleService.articles$;
+    this.quantity$ = this.articleService.quantity$;
   }
-
 }

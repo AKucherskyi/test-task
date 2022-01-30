@@ -9,14 +9,14 @@ import { filter, mergeMap, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ArticleService {
-  private _articles: BehaviorSubject<Article[]> = new BehaviorSubject<
-    Article[]
-  >([]);
+  private _articles: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+
   public articles$: Observable<Article[]> = this._articles
     .asObservable()
     .pipe(filter((val) => !!val));
 
   public quantity$: Subject<number> = new Subject<number>();
+  public predicate$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient) {}
 
@@ -28,11 +28,13 @@ export class ArticleService {
     );
   }
 
-  updateArticlesBySearch(searchPhrase: string) {
+  updateArticlesBySearch(predicate: string) {
     let articles: Article[] = [];
     let articles$: Observable<Article[]>[] = [];
 
-    for (let searchWord of searchPhrase.split(' ')) {
+    this.predicate$.next(predicate);
+
+    for (let searchWord of predicate.split(' ')) {
       articles$.push(this.getSearchedArticles('title', searchWord));
     }
 
@@ -43,14 +45,12 @@ export class ArticleService {
             articles.push(...arr);
           });
         }),
-        
+
         mergeMap(() => {
           articles$ = [];
-
-          for (let searchWord of searchPhrase.split(' ')) {
+          for (let searchWord of predicate.split(' ')) {
             articles$.push(this.getSearchedArticles('summary', searchWord));
           }
-
           return forkJoin(articles$);
         })
       )
